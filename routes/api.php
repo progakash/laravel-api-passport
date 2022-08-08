@@ -15,6 +15,10 @@ use App\Http\Controllers\PeopleController;
 |
 */
 
+Route::get('/test', function(Request $request){
+    return 'authenticated';
+});
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
