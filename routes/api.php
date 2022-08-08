@@ -20,3 +20,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/apilist', [PeopleController::class, 'allList']);
+
+Route::post('login', [PeopleController::class, 'login']);
+Route::post('register', [PeopleController::class, 'register']);
+// Route::group(['middleware' => 'auth:api'], function(){
+// Route::post('details', 'API\UserController@details');
+// });
