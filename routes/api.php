@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PeopleController;
 use App\Http\Controllers\API\RegistrationController;
+// use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,7 @@ use App\Http\Controllers\API\RegistrationController;
 
 Route::post('register', [RegistrationController::class, 'registerUser']);
 Route::post('login', [RegistrationController::class, 'loginUser']);
+Route::middleware('auth:api')->get('/user', [RegistrationController::class, 'getUser']);
 
 Route::get('/test', function(Request $request){
     return 'authenticated';

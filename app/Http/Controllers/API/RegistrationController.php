@@ -11,6 +11,10 @@ use Hash;
 
 class RegistrationController extends Controller
 {
+    public function getUser(){
+        $data = User::all();
+        return response(['user-data'=>$data]);
+    }
     public function registerUser(Request $request){
 
         // $data = $request->validate([
